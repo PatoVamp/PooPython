@@ -1,7 +1,13 @@
+# archivo main
+
+""" Importacion de las clases en el archivo "paraimpor". """
 from paraimpor import Proyecto, Acciones
 
+"""Array para guardar las instancias de los proyectos"""
 archivero = []
 
+""""Aquí están las 3 instancias con datos establecidos de los proyectos"""
+"""Cree las instancias de la clase proyecto y uso los datos como argumento al constructor init"""
 proyecto1 = Proyecto(
     id_proyecto=1,
     nombre_proyecto="App Gestión Inventario para 'Mercado Local'",
@@ -35,22 +41,28 @@ proyecto3 = Proyecto(
     presupuesto=38000
 )
 
+"""Guardo las instancias dentro del arreglo archivero"""
 archivero.append(proyecto1)
 archivero.append(proyecto2)
 archivero.append(proyecto3)
 
+"""Cree una variable para usar las funciones de Acciones del menu y dentro uso archivero como una dependencia objeto, para que el menu se ejecute correctamente"""
 acciones = Acciones(archivero)
 
+""" Bucle para seleccionar una de las opciones del menu"""
 while True:
     print("\nSeleccione una opción para continuar: ")
     print("1. Agregar proyecto")
     print("2. Ver proyectos")
-    print("3. Buscar proyecto")
+    print("3. Buscar proyecto por ID")
     print("4. Actualizar proyecto")
     print("5. Eliminar proyecto")
     print("6. Salir")
 
+    """"Creo una variable de opción tipo input para seleccionar una opción"""
     opcion = input("Opción a elegir: ")
+
+    """Condicional IF con opciones para el menú"""
     if opcion == "1":
         acciones.agregar_proyecto()
     elif opcion == "2":
@@ -65,4 +77,5 @@ while True:
         break
     else:
         print("Opción inválida.")
+
 
